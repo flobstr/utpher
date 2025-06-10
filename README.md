@@ -1,6 +1,4 @@
-# Hobbybrauerei Webseite
-
-Eine einfache, responsive Webseite für Hobbybrauer, erstellt mit HTML, CSS und JavaScript.
+# Utpher Roadmap
 
 ## Anpassung der Webseite
 
@@ -19,13 +17,6 @@ Eine einfache, responsive Webseite für Hobbybrauer, erstellt mit HTML, CSS und 
 1. Die Farben können in der `styles.css` unter `:root` angepasst werden
 2. Schriftarten können im `body` Selektor geändert werden
 3. Die Größen der Karten und Abstände können in den entsprechenden CSS-Klassen angepasst werden
-
-### GitHub Pages Deployment
-1. Erstellen Sie ein neues Repository auf GitHub
-2. Laden Sie alle Dateien hoch
-3. Gehen Sie zu Repository Settings > Pages
-4. Wählen Sie den `main` Branch als Quelle
-5. Ihre Seite wird unter `https://[username].github.io/[repository-name]` verfügbar sein
 
 ## Technische Details
 - Responsive Design für alle Bildschirmgrößen
