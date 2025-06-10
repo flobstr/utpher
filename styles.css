@@ -171,7 +171,7 @@ body {
 
 /* About Section */
 .about-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
@@ -182,29 +182,26 @@ body {
     font-size: 1.8rem;
 }
 
-.timeline {
-    position: relative;
-    max-width: 800px;
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background: var(--secondary-color);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
+.timeline-card {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
 }
 
-.timeline-item {
-    padding: 1rem 0;
-    position: relative;
-    width: 100%;
-    margin-bottom: 2rem;
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-year {
@@ -218,19 +215,8 @@ body {
 }
 
 .timeline-content {
-    background: var(--card-background);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    max-width: 500px;
-    margin: 0 auto;
-    transition: transform 0.3s ease;
-}
-
-.timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 /* Footer */
@@ -335,21 +321,12 @@ footer {
         padding: 0 1rem;
     }
 
-    .timeline::before {
-        left: 31px;
+    .timeline-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
 
-    .timeline-item {
-        padding-left: 60px;
-    }
-
-    .timeline-year {
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-
-    .timeline-content {
-        margin-left: 0;
+    .timeline-card {
+        margin-bottom: 1rem;
     }
 } 
