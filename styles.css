@@ -448,4 +448,42 @@ footer {
     color: var(--secondary-color);
     font-weight: 600;
     margin-bottom: 0.5rem;
+}
+
+.beer-details {
+    margin-top: 1rem;
+    text-align: left;
+    padding: 0 1rem;
+}
+
+.beer-details p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.beer-details strong {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+.about-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
 } 
