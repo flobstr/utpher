@@ -25,7 +25,7 @@ body {
     top: 0;
     width: 100%;
     background-color: var(--primary-color);
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,6 +35,7 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    z-index: 1001;
 }
 
 .nav-logo {
@@ -60,7 +61,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                 var(--primary-color);
     display: flex;
@@ -68,10 +69,22 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
+    padding: 80px 20px 20px 20px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-logo {
     max-width: 300px;
+    width: 100%;
+    height: auto;
     margin-bottom: 2rem;
     animation: fadeIn 1.5s ease-in;
 }
@@ -84,6 +97,14 @@ body {
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 /* Sections */
@@ -196,12 +217,24 @@ footer {
         margin: 1rem 0;
     }
 
-    .hero-content h1 {
-        font-size: 2rem;
+    .nav-logo {
+        height: 30px;
+    }
+
+    .hero {
+        padding-top: 60px;
     }
 
     .hero-logo {
         max-width: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
     }
 
     .ingredient-img {
