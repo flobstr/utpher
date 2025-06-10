@@ -5,9 +5,10 @@ Eine einfache, responsive Webseite für Hobbybrauer, erstellt mit HTML, CSS und 
 ## Anpassung der Webseite
 
 ### Bilder
-1. Ersetzen Sie `hero-bg.jpg` mit Ihrem eigenen Hintergrundbild für die Startseite
-2. Fügen Sie Ihre Bierbilder in den `beer-card` Elementen ein
-3. Optimieren Sie die Bilder für das Web (empfohlene Größe: max. 1920x1080px)
+1. Alle Bilder sollten im `images/` Ordner gespeichert werden
+2. Ersetzen Sie `images/hero-bg.jpg` mit Ihrem eigenen Hintergrundbild für die Startseite
+3. Fügen Sie Ihre Bierbilder in den `beer-card` Elementen ein (Pfad: `images/beer-name.jpg`)
+4. Optimieren Sie die Bilder für das Web (empfohlene Größe: max. 1920x1080px)
 
 ### Inhalte
 1. Bearbeiten Sie die Texte in der `index.html`
@@ -37,4 +38,6 @@ Eine einfache, responsive Webseite für Hobbybrauer, erstellt mit HTML, CSS und 
 - `index.html` - Hauptseite
 - `styles.css` - Styling
 - `script.js` - Interaktivität
-- Bilder (`.jpg`, `.png`)
+- `images/` - Ordner für alle Bilder
+  - `hero-bg.jpg` - Hintergrundbild für die Startseite
+  - Weitere Bierbilder (`.jpg`, `.png`)
