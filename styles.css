@@ -87,6 +87,29 @@ body {
     animation: fadeIn 1.5s ease-in;
 }
 
+.slogan {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-in 0.3s backwards;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-in 0.6s backwards;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -151,6 +174,63 @@ body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+}
+
+.timeline-title {
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 1rem 0;
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.timeline-year {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.timeline-content {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
@@ -243,5 +323,33 @@ footer {
     .beer-img {
         width: 150px;
         height: 150px;
+    }
+
+    .slogan {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .timeline::before {
+        left: 31px;
+    }
+
+    .timeline-item {
+        padding-left: 60px;
+    }
+
+    .timeline-year {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .timeline-content {
+        margin-left: 0;
     }
 } 
