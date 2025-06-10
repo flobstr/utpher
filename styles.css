@@ -1,9 +1,11 @@
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #e67e22;
-    --text-color: #333;
-    --background-color: #f9f9f9;
-    --card-background: #ffffff;
+    --primary-color: #000000;    /* Schwarz */
+    --secondary-color: #6D8827;  /* Grünton */
+    --text-color: #333333;       /* Dunkelgrau für Text */
+    --background-color: #ffffff; /* Weiß */
+    --card-background: #ffffff;  /* Weiß */
+    --hover-color: #8BA83B;      /* Hellerer Grünton für Hover-Effekte */
+    --heading-color: #ffffff;    /* Weiß für Überschriften */
 }
 
 * {
@@ -61,13 +63,13 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
                 var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: var(--background-color);
     padding: 80px 20px 20px 20px;
     position: relative;
 }
@@ -131,12 +133,16 @@ body {
 /* Sections */
 .section {
     padding: 5rem 2rem;
+    background-color: var(--background-color);
 }
 
 .section h2 {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--primary-color);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Grid Layouts */
@@ -171,7 +177,7 @@ body {
 
 /* About Section */
 .about-content {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
@@ -180,14 +186,27 @@ body {
     color: var(--primary-color);
     margin-bottom: 3rem;
     font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .timeline-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    position: relative;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-grid::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
 }
 
 .timeline-card {
@@ -197,16 +216,46 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     text-align: left;
+    width: calc(50% - 30px);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-card:nth-child(odd) {
+    margin-left: auto;
+}
+
+.timeline-card:nth-child(even) {
+    margin-right: auto;
+}
+
+.timeline-card::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-card:nth-child(odd)::before {
+    left: -40px;
+}
+
+.timeline-card:nth-child(even)::before {
+    right: -40px;
 }
 
 .timeline-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(109, 136, 39, 0.2);
 }
 
 .timeline-year {
     background: var(--secondary-color);
-    color: white;
+    color: var(--background-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     display: inline-block;
@@ -222,7 +271,7 @@ body {
 /* Footer */
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--background-color);
     padding: 2rem;
     text-align: center;
 }
@@ -232,7 +281,7 @@ footer {
 }
 
 .social-links a {
-    color: white;
+    color: var(--background-color);
     margin: 0 1rem;
     font-size: 1.5rem;
     transition: color 0.3s ease;
@@ -251,7 +300,7 @@ footer {
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: var(--background-color);
     margin: 5px;
     transition: all 0.3s ease;
 }
@@ -321,12 +370,55 @@ footer {
         padding: 0 1rem;
     }
 
-    .timeline-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
+    .timeline-grid::before {
+        left: 31px;
     }
 
     .timeline-card {
-        margin-bottom: 1rem;
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        margin-right: 0 !important;
     }
+
+    .timeline-card::before {
+        left: -40px !important;
+        right: auto !important;
+    }
+}
+
+/* Event Cards */
+.event-card {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.event-card p {
+    color: var(--text-color);
+}
+
+/* Beer Cards */
+.beer-card {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.beer-card h3 {
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.beer-card p {
+    color: var(--text-color);
 } 
